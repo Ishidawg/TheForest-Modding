@@ -19,7 +19,7 @@
 - *Debugger and .NET assembly editor:* dnSpy
 
 ## How to install 📑
-you **DONT** need a modmanager, just donwload the mod that you want and put in:
+you **DONT** need a modmanager, just download the mod that you want and put in:
 
 ```diff
 +  The Forest\TheForest_Data\Managed\ **Assembly-CSharp.dll**
