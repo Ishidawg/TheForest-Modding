@@ -32,12 +32,15 @@ I'll merge the mods to create a comprehensive version with all the changes. Also
 ## How I made
 <p align="justify">As The Forest is a Unity game, you'll need to modify the file present in the Managed folder (all Unity games have one). Sometimes it's an Assembly-CSharp.dll; other times, for more complex games, it may be different. Once you've identified the file, you'll need a debugger and editor. I use dnSpy. Navigate through the files, for example, for the water blur, the file that contains all the functions and methods is UnderWaterPostEffect.cs.</p>
 
+**Remove blur**
 <p align="justify">To remove the blur, simply follow the comments I've added in the code. I removed the blur_object from the Start() function and all lines referring to blur in the OnRenderImage() function. You might wonder, "Why does the water still appear blurred after removing the blur?" Well, in fact, the blur doesn't affect the water much; it's the color filter applied over it that causes the clarity issue due to its whitish tint. I couldn't reduce the opacity of the water's tint, but it's better than it being blurrier, as you can see in the image below.</p>
 
 **Default Underwater**
-![DefaultWater](https://cdn.discordapp.com/attachments/524370625167491073/1237985600087523339/TheForest_2024-05-09_01-32-32.png?ex=6642e96f&is=664197ef&hm=2c8f94a780b852e6fc4b699c724906a9dde268cbd79001fa608f538fedd6e6a8&)
+![DefaultWater](https://github.com/Ishidawg/TheForest-Modding/blob/main/images/underwater-blur.png?raw=true)
 
 **Modded Underwater**
-![ModdedWater](https://cdn.discordapp.com/attachments/524370625167491073/1237987002150944809/TheForest_2024-05-09_01-37-09.png?ex=6642eabd&is=6641993d&hm=f9cb23fe5c6e4e658207e23ce0c11ce81faea24fdb7e24d7cf1efe44241ba560&)
+![ModdedWater](https://github.com/Ishidawg/TheForest-Modding/blob/main/images/underwater-clear.png?raw=true)
 
-DONT LOOK AT IT ;-;
+<p align="justify">So, I managed to get rid of the underwater blur, but that annoying white tint is still there. I tried toning it down, but removing it altogether made things look pretty awful tbh. It's not perfect, but it's definitely better than before IMO.</p>
+
+
