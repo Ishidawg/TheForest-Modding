@@ -1,4 +1,4 @@
-![Flashlight-good-one](https://github.com/Ishidawg/TheForest-Modding/assets/78714158/374905b2-323b-4de4-8f48-d842d2474bdd)# The Forest 💀🌴
+# The Forest 💀🌴
 > *A collection of mods I've created for The Forest.*
 
 <p align="justify">Having recently returned to The Forest after all these years, I found certain aspects of the game to be rather bothersome, even though I understand they are intentional design choices by the developers. As a developer myself, I wanted to play the game as I envisioned it after completing it without mods. The particular aspects that bothered me were: Water Blur, Flashlight, and Lighter.</p>
