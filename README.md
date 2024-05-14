@@ -59,6 +59,20 @@ I'll merge the mods to create a comprehensive version with all the changes. Also
 **Modded Flashlight**
 ![DefautFlashlight](https://github.com/Ishidawg/TheForest-Modding/blob/main/images/Flashlight-good-one.png?raw=true)
 
+### Better torch (IMO)
+<p align="justify">By the way, just like I did with the underwater post process and flashlight, if you take a peek at the code, you'll notice comments to help you navigate through the modifications.</p>
+<p align="justify">So, I started by digging into the .cs file responsible for range of lighter, and again, no progress at all... So I decided to mod a intensity and duration of torch, that is identified on .cs file "Burnable Cloth", then, easy as flashligh modification, I ended up removing all values from constructors at the bottom of the code and assing the values directly on Awake() function, like this: </p>
+
+![Code-main-function](https://github.com/Ishidawg/TheForest-Modding/blob/main/images/stick-code-awake.PNG?raw=true)
+
+Before and after to comparisons... Later I'll do a merged versio with all mods together...
+
+**Default Torch**
+![DefautFlashlight](https://github.com/Ishidawg/TheForest-Modding/blob/main/images/stick-shit.png?raw=true)
+
+**Modded Torch**
+![DefautFlashlight](https://github.com/Ishidawg/TheForest-Modding/blob/main/images/stick-good.png?raw=true)
+
 ****
 Yeep, that's it, contribute to modding, write code and use tools. Be happy ❤️
 
