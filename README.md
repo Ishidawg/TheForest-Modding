@@ -9,7 +9,7 @@
 
 **About Lighter:** <p align="justify">This one was a real pain in the ass to tweak. I struggled to figure out how to mod its values; it was quite confusing. After spending countless hours debugging and testing, I couldn't find a solution. So, if adjusting the range of the lighter is a common annoyance for you as well, any help with modding it would be greatly appreciated.</p>
 
-**About Inventory:** <p align="justify">my hands can only hold so many rocks and sticks at once. But my backpack? That thing is already stuffed with meds, human bodies part, turtle shells, a bunch of melee weapons, and, somehow, a focking katana. So, yeah, it’s a video game. The Forest has a "survival" tag on Steam, but every time I play solo, I never bother with building a base. Instead, I just hoard sticks and leaves to craft a tent whenever I need to save. That’s why I find item limits unnecessary. Now, with this mod, the item cap is set to 10,000 per stack, meaning you can carry as much as you want.</p>
+**About Inventory:** <p align="justify">my hands can only hold so many rocks and sticks at once. But my backpack? That thing is already stuffed with meds, human bodies part, turtle shells, a bunch of melee weapons, and, somehow, a focking katana. So, yeah, it’s a video game. The Forest has a "survival" tag on Steam, but every time I play solo, I never bother with building a base. Instead, I just hoard sticks and leaves to craft a tent whenever I need to save. That’s why I find item limits unnecessary. Now, with this mod, the item cap is, meaning you can carry as much items as you want.</p>
 
 ****
 
