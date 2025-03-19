@@ -74,7 +74,7 @@ Before and after to comparisons... Later I'll do a merged versio with all mods t
 **Modded Torch**
 ![DefautFlashlight](https://github.com/Ishidawg/TheForest-Modding/blob/main/images/stick-good.png?raw=true)
 
-### Better Inventory (IMO)
+### Remove Stash Limit
 <p align="justify">The inventory system in <strong>The Forest</strong> is managed within the <code>TheForest.Items.Inventory</code> namespace, specifically inside the <code>InventoryItem</code> class. That’s where I started digging:</p>
 
 ![TheForestItemInventory](https://github.com/user-attachments/assets/914e5178-d286-4729-bbd6-b85dd632488b)
