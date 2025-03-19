@@ -9,6 +9,7 @@
 
 **About Lighter:** <p align="justify">This one was a real pain in the ass to tweak. I struggled to figure out how to mod its values; it was quite confusing. After spending countless hours debugging and testing, I couldn't find a solution. So, if adjusting the range of the lighter is a common annoyance for you as well, any help with modding it would be greatly appreciated.</p>
 
+**About Inventoty:** <p align="justify">my hands can only hold so many rocks and sticks at once. But my backpack? That thing is already stuffed with meds, human bodies part, turtle shells, a bunch of melee weapons, and, somehow, a focking katana. So, yeah, it’s a video game. The Forest has a "survival" tag on Steam, but every time I play solo, I never bother with building a base. Instead, I just hoard sticks and leaves to craft a tent whenever I need to save. That’s why I find item limits unnecessary. Now, with this mod, the item cap is set to 10,000 per stack, meaning you can carry as much as you want.</p>
 
 ****
 
@@ -72,6 +73,33 @@ Before and after to comparisons... Later I'll do a merged versio with all mods t
 
 **Modded Torch**
 ![DefautFlashlight](https://github.com/Ishidawg/TheForest-Modding/blob/main/images/stick-good.png?raw=true)
+
+### Better Inventory (IMO)
+<p align="justify">The inventory system in <strong>The Forest</strong> is managed within the <code>TheForest.Items.Inventory</code> namespace, specifically inside the <code>InventoryItem</code> class. That’s where I started digging:</p>
+
+![TheForestItemInventory](https://github.com/user-attachments/assets/914e5178-d286-4729-bbd6-b85dd632488b)
+
+<p align="justify">First, I modified the <code>get</code> function for <code>maxAmount</code>, which is responsible for enforcing item stack limits.</p>
+
+**Default**
+![getOfMaxAmount-1](https://github.com/user-attachments/assets/b94ddb25-5717-4d0b-9ade-878cff3b9e91)
+
+**Modded**
+![getOfMaxAmount-2](https://github.com/user-attachments/assets/8c1c2e2b-89e4-4044-a6aa-c2b3773224d4)
+
+<p align="justify">However, simply changing this getter wasn't enough. The game still had additional validations preventing the player from carrying an unlimited number of what he wants. So, I had to look into the function that gets called every time an item is picked up.</p>
+
+**Default**
+![addFun-1](https://github.com/user-attachments/assets/75c0c261-5662-4419-96a6-b7274375213b)
+
+**Modded**
+![addFun-2](https://github.com/user-attachments/assets/2e6d1525-71fc-455e-b9d4-62c67787ba81)
+
+<p align="justify">By tweak this function, I removed the overflow verification, which originally checked whether the item stack had reached its maximum limit before allowing the player to pick up more. Now, the game no longer checks for item limits, meaning you can hold tight as many sticks want... enjoy!</p>
+
+**Inventory screenshots**
+![stickInventory](https://github.com/user-attachments/assets/1e72b6f5-91b0-441f-9dec-dcbf41aeea44)
+![snackInventory](https://github.com/user-attachments/assets/d9d91444-841e-4aac-bf94-23595d7dee66)
 
 ****
 Yeep, that's it, contribute to modding, write code and use tools. Be happy ❤️
