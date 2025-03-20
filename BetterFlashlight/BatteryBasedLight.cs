@@ -6,25 +6,18 @@ using UnityEngine;
 
 namespace TheForest.Items.World
 {
-	// Token: 0x02000FCC RID: 4044
+	// Token: 0x02000CD3 RID: 3283
 	[AddComponentMenu("Items/World/Battery Based Light")]
 	public class BatteryBasedLight : EntityBehaviour<IPlayerState>
 	{
-		// Token: 0x0600680F RID: 26639
+		// Token: 0x06005796 RID: 22422
 		private void Awake()
 		{
 			this._vis = base.transform.root.GetComponent<netPlayerVis>();
 			this.SetColor(this._torchBaseColor);
-            // MOD - Custom values
-			if (this._mainLight != null)
-			{
-				this._mainLight.range = 260f;
-				this._mainLight.spotAngle = 135f;
-				this._mainLight.intensity = 22f;
-			}
 		}
 
-		// Token: 0x06006810 RID: 26640 RVA: 0x002B4D34 File Offset: 0x002B2F34
+		// Token: 0x06005797 RID: 22423
 		private void OnEnable()
 		{
 			if (!BoltNetwork.isRunning || (BoltNetwork.isRunning && base.entity && base.entity.isAttached))
@@ -39,7 +32,7 @@ namespace TheForest.Items.World
 			}
 		}
 
-		// Token: 0x06006811 RID: 26641 RVA: 0x002B4DA4 File Offset: 0x002B2FA4
+		// Token: 0x06005798 RID: 22424
 		private void OnDisable()
 		{
 			this.SetEnabled(false);
@@ -64,7 +57,7 @@ namespace TheForest.Items.World
 			base.StopAllCoroutines();
 		}
 
-		// Token: 0x06006812 RID: 26642 RVA: 0x002B4E50 File Offset: 0x002B3050
+		// Token: 0x06005799 RID: 22425
 		private void Update()
 		{
 			if (!BoltNetwork.isRunning || (BoltNetwork.isRunning && base.entity && base.entity.isAttached && base.entity.isOwner))
@@ -83,7 +76,7 @@ namespace TheForest.Items.World
 							if (LocalPlayer.Stats.BatteryCharge < 3f && Time.time > this._animCoolDown && !this._skipNoBatteryRoutine)
 							{
 								LocalPlayer.Animator.SetBool("noBattery", true);
-								this._animCoolDown = Time.time + (float)UnityEngine.Random.Range(30, 60);
+								this._animCoolDown = Time.time + (float)global::UnityEngine.Random.Range(30, 60);
 								base.Invoke("resetBatteryBool", 1.5f);
 							}
 							if (LocalPlayer.Stats.BatteryCharge <= 0f)
@@ -144,7 +137,7 @@ namespace TheForest.Items.World
 			TheForestQualitySettings.UserSettings.ApplyQualitySetting(this._mainLight, LightShadows.Hard);
 		}
 
-		// Token: 0x06006813 RID: 26643 RVA: 0x00042350 File Offset: 0x00040550
+		// Token: 0x0600579A RID: 22426
 		private IEnumerator DelayedLightOn()
 		{
 			this.SetEnabled(false);
@@ -153,19 +146,19 @@ namespace TheForest.Items.World
 			yield break;
 		}
 
-		// Token: 0x06006814 RID: 26644 RVA: 0x0004235F File Offset: 0x0004055F
+		// Token: 0x0600579B RID: 22427
 		private void GotBloody()
 		{
 			this.SetColor(this._torchBloodyColor);
 		}
 
-		// Token: 0x06006815 RID: 26645 RVA: 0x0004236D File Offset: 0x0004056D
+		// Token: 0x0600579C RID: 22428
 		private void GotClean()
 		{
 			this.SetColor(this._torchBaseColor);
 		}
 
-		// Token: 0x06006816 RID: 26646 RVA: 0x002B50B0 File Offset: 0x002B32B0
+		// Token: 0x0600579D RID: 22429
 		private void manageShadows()
 		{
 			if (CoopPeerStarter.DedicatedHost || LocalPlayer.Transform == null || Scene.SceneTracker == null)
@@ -188,25 +181,25 @@ namespace TheForest.Items.World
 			TheForestQualitySettings.UserSettings.ApplyQualitySetting(this._mainLight, LightShadows.None);
 		}
 
-		// Token: 0x06006817 RID: 26647 RVA: 0x0004237B File Offset: 0x0004057B
+		// Token: 0x0600579E RID: 22430
 		private void TorchLowerLight()
 		{
 			this.SetIntensity(this._lowBatteryIntensity1);
 		}
 
-		// Token: 0x06006818 RID: 26648 RVA: 0x0004238E File Offset: 0x0004058E
+		// Token: 0x0600579F RID: 22431
 		private void TorchLowerLightMore()
 		{
 			this.SetIntensity(this._lowBatteryIntensity2);
 		}
 
-		// Token: 0x06006819 RID: 26649 RVA: 0x000423A1 File Offset: 0x000405A1
+		// Token: 0x060057A0 RID: 22432
 		private void TorchLowerLightEvenMore()
 		{
 			this.SetIntensity(this._lowBatteryIntensity3);
 		}
 
-		// Token: 0x0600681A RID: 26650 RVA: 0x000423B4 File Offset: 0x000405B4
+		// Token: 0x060057A1 RID: 22433
 		public void SetEnabled(bool enabled)
 		{
 			this._mainLight.enabled = enabled;
@@ -216,7 +209,7 @@ namespace TheForest.Items.World
 			}
 		}
 
-		// Token: 0x0600681B RID: 26651 RVA: 0x002B5198 File Offset: 0x002B3398
+		// Token: 0x060057A2 RID: 22434
 		public void SetIntensity(float intensity)
 		{
 			this._mainLight.intensity = intensity;
@@ -235,19 +228,19 @@ namespace TheForest.Items.World
 			}
 		}
 
-		// Token: 0x0600681C RID: 26652 RVA: 0x000423DB File Offset: 0x000405DB
+		// Token: 0x060057A3 RID: 22435
 		public void SetColor(Color color)
 		{
 			this._mainLight.color = color;
 		}
 
-		// Token: 0x0600681D RID: 26653 RVA: 0x000423E9 File Offset: 0x000405E9
+		// Token: 0x060057A4 RID: 22436
 		private void resetBatteryBool()
 		{
 			LocalPlayer.Animator.SetBool("noBattery", false);
 		}
 
-		// Token: 0x0600681E RID: 26654 RVA: 0x000423FB File Offset: 0x000405FB
+		// Token: 0x060057A5 RID: 22437
 		private IEnumerator stashNoBatteryRoutine()
 		{
 			float clamp = 1f;
@@ -255,9 +248,9 @@ namespace TheForest.Items.World
 			float t = 0f;
 			while (t < 1f)
 			{
-				float num = new RandomRangeF(0.3f, 0.5f);
-				num *= clamp;
-				this.SetIntensity(num);
+				float result = new RandomRangeF(0.3f, 0.5f);
+				result *= clamp;
+				this.SetIntensity(result);
 				clamp = Mathf.Lerp(1f, 0f, t);
 				t += Time.deltaTime / 2f;
 				yield return null;
@@ -266,57 +259,52 @@ namespace TheForest.Items.World
 			yield break;
 		}
 
-		// Token: 0x04006D78 RID: 28024
+		// Token: 0x04005D18 RID: 23832
 		public Light _mainLight;
 
-		// Token: 0x04006D79 RID: 28025
+		// Token: 0x04005D19 RID: 23833
 		public Light _fillLight;
 
-		// Token: 0x04006D7A RID: 28026
+		// Token: 0x04005D1A RID: 23834
 		public Color _torchBaseColor;
 
-		// Token: 0x04006D7B RID: 28027
+		// Token: 0x04005D1B RID: 23835
 		public Color _torchBloodyColor;
 
-		// Token: 0x04006D7C RID: 28028
-        // MOD - Reduce battery cost
+		// Token: 0x04005D1C RID: 23836
 		public float _batterieCostPerSecond = 0.01f;
 
-		// Token: 0x04006D7D RID: 28029
+		// Token: 0x04005D1D RID: 23837
 		public float _delayBeforeLight = 0.5f;
 
-		// Token: 0x04006D7E RID: 28030
-        // MOD - Remove the values
-		public float _highBatteryIntensity;
+		// Token: 0x04005D1E RID: 23838
+		public float _highBatteryIntensity = 4f;
 
-		// Token: 0x04006D7F RID: 28031
-        // MOD - Remove the values
-		public RandomRangeF _lowBatteryIntensity1;
+		// Token: 0x04005D1F RID: 23839
+		public RandomRangeF _lowBatteryIntensity1 = new RandomRangeF(4f, 3.5f);
 
-		// Token: 0x04006D80 RID: 28032
-        // MOD - Remove the values
-		public RandomRangeF _lowBatteryIntensity2;
+		// Token: 0x04005D20 RID: 23840
+		public RandomRangeF _lowBatteryIntensity2 = new RandomRangeF(3.5f, 3f);
 
-		// Token: 0x04006D81 RID: 28033
-        // MOD - Remove the values
-		public RandomRangeF _lowBatteryIntensity3;
+		// Token: 0x04005D21 RID: 23841
+		public RandomRangeF _lowBatteryIntensity3 = new RandomRangeF(3f, 2.5f);
 
-		// Token: 0x04006D82 RID: 28034
+		// Token: 0x04005D22 RID: 23842
 		public bool _skipNoBatteryRoutine;
 
-		// Token: 0x04006D83 RID: 28035
+		// Token: 0x04005D23 RID: 23843
 		public bool _manageDynamicShadows;
 
-		// Token: 0x04006D84 RID: 28036
+		// Token: 0x04005D24 RID: 23844
 		private netPlayerVis _vis;
 
-		// Token: 0x04006D85 RID: 28037
+		// Token: 0x04005D25 RID: 23845
 		private float _animCoolDown;
 
-		// Token: 0x04006D86 RID: 28038
+		// Token: 0x04005D26 RID: 23846
 		private float _boolResetTimer;
 
-		// Token: 0x04006D87 RID: 28039
+		// Token: 0x04005D27 RID: 23847
 		private bool _doingStash;
 	}
 }
