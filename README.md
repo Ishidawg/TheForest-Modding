@@ -8,6 +8,7 @@ This is a new README. It contains more information about how everything works an
 - [Installation](#installation)
 - [Comparison](#comparison)
 - [How to merge yourself](#how-to-merge-yourself)
+- [Testing](#testing)
 
 ## Mods
 
