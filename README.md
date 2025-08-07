@@ -1,7 +1,7 @@
 # The Forest 💀🌴
 > *A collection of mods I've created for The Forest.*
 
-This is a new README. It contains more information about how everything works and is more straightforward. If you want to check out the old README, just click it.
+This is a new README. It contains more information about how everything works and is more straightforward. If you want to check out the [old README](https://github.com/Ishidawg/TheForest-Modding/blob/main/OLD-README.md), just click it.
 
 ## Content
 - [Mods](#mods)
@@ -98,7 +98,7 @@ If you're **unsure** about what *visually* has actually **changed**, take a look
 
 To be honest, the only method I found to work is the *old-fashioned cowboy way*: **copy and paste**. I initially tried using the **Merge with Assembly** in dnSpy, but I can't get it to work. So my tip is *real simple*, just more *time demanding* (about 5 minutes): **Copy & Paste**.
 
-You will need the [dnSpy]("https://github.com/dnSpyEx/dnSpy") to edit game assemblie. Just download it, then open the `Assembly-CSharp.dll`. Now is just copy and paste. 
+You will need the [dnSpy](https://github.com/dnSpyEx/dnSpy) to edit game assemblie. Just download it, then open the `Assembly-CSharp.dll`. Now is just copy and paste. 
 
 Look at the mod that you want, let's say you want to merge the `flashlight` mod.
 
