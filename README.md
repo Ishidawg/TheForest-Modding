@@ -4,10 +4,10 @@
 This is a new README. It contains more information about how everything works and is more straightforward. If you want to check out the old README, just click it.
 
 ## Content
-- [Mods](mods)
-- [Installation](installation)
-- [Comparison](comparison)
-- [How to merge yourself](howtomergeyourself)
+- [Mods](#mods)
+- [Installation](#installation)
+- [Comparison](#comparison)
+- [How to merge yourself](#how-to-merge-yourself)
 
 ## Mods
 
@@ -71,26 +71,26 @@ If you're **unsure** about what *visually* has actually **changed**, take a look
 
 <h6 align="center" style="background: #d3d3d3; padding: 4px;">Flashlight<h6>
 <div align="center">
-    <img alt="Flashlight-vanilla" src="https://i.imgur.com/8dF3Mu9.png" width="600" />
-    <img alt="Flashlight-modded" src="https://i.imgur.com/ius5Ohs.png" width="600" />
+    <img alt="Flashlight-vanilla" src="https://i.imgur.com/8dF3Mu9.png" width="800" />
+    <img alt="Flashlight-modded" src="https://i.imgur.com/ius5Ohs.png" width="800" />
 </div>
 
 <h6 align="center" style="background: #d3d3d3; padding: 4px;">Torch<h6>
-<div align="center">
-    <img alt="Torch-vanilla" src="https://i.imgur.com/dyam6L3.png" width="600" />
-    <img alt="Torch-modded" src="https://i.imgur.com/lzkn9ii.png" width="600" />
+<div align="center"">
+    <img alt="Torch-vanilla" src="https://i.imgur.com/dyam6L3.png" width="800" />
+    <img alt="Torch-modded" src="https://i.imgur.com/lzkn9ii.png" width="800" />
 </div>
 
 <h6 align="center" style="background: #d3d3d3; padding: 4px;">Inventory<h6>
 <div align="center">
-    <img alt="Inventory-vanilla" src="https://i.imgur.com/8XEPydI.jpeg" width="600" />
-    <img alt="Inventory-modded" src="https://i.imgur.com/1lh5YE7.jpeg" width="600" />
+    <img alt="Inventory-vanilla" src="https://i.imgur.com/8XEPydI.jpeg" width="800" />
+    <img alt="Inventory-modded" src="https://i.imgur.com/1lh5YE7.jpeg" width="800" />
 </div>
 
 <h6 align="center" style="background: #d3d3d3; padding: 4px;">Water<h6>
 <div align="center">
-    <img alt="Water-vanilla" src="https://i.imgur.com/78lPdiN.png" width="600" />
-    <img alt="Water-modded" src="https://i.imgur.com/33wdJrl.png" width="600" />
+    <img alt="Water-vanilla" src="https://i.imgur.com/78lPdiN.png" width="800" />
+    <img alt="Water-modded" src="https://i.imgur.com/33wdJrl.png" width="800" />
 </div>
 
 ## How to merge yourself
@@ -111,3 +111,5 @@ Go to the [`BatteryBasedLight.cs`](https://github.com/Ishidawg/TheForest-Modding
 </div>
 
 When you are done with editing, click on `File` → `Save All` and then `Ok`. That's it! You've made your **own mod** by merging what you want into your game.
+****
+Yeep, that's it, contribute to modding, write code and use tools. Be happy ❤️
