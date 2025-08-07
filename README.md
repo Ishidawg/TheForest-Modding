@@ -20,7 +20,7 @@ I've created four mods so far. They are intended to modify the behavior of the f
 
 ### Torch
 - Doubled the **intensity** (*or brightness*) of the light.
-- Doubled the **lifespan** of the fire by halving the fuel consumption.
+- Doubled the **lifespan** of the fire by halving the fuel consumption, resulting in *08 minutes of light*.
 
 ### Inventory
 - **Hard-capped** the limit of all countable items to `1000`.
@@ -70,26 +70,26 @@ Done! You folder should look like this:
 If you're **unsure** about what *visually* has actually **changed**, take a look at the comparison section:
 
 <h6 align="center" style="background: #d3d3d3; padding: 4px;">Flashlight<h6>
-<div align="center">
-    <img alt="Flashlight-vanilla" src="https://i.imgur.com/8dF3Mu9.png" width="800" />
+<div align="center" >
+    <img alt="Flashlight-vanilla" src="https://i.imgur.com/8dF3Mu9.png" width="800" style="margin-bottom: 10px;" />
     <img alt="Flashlight-modded" src="https://i.imgur.com/ius5Ohs.png" width="800" />
 </div>
 
 <h6 align="center" style="background: #d3d3d3; padding: 4px;">Torch<h6>
 <div align="center"">
-    <img alt="Torch-vanilla" src="https://i.imgur.com/dyam6L3.png" width="800" />
+    <img alt="Torch-vanilla" src="https://i.imgur.com/dyam6L3.png" width="800" style="margin-bottom: 10px;" />
     <img alt="Torch-modded" src="https://i.imgur.com/lzkn9ii.png" width="800" />
 </div>
 
 <h6 align="center" style="background: #d3d3d3; padding: 4px;">Inventory<h6>
 <div align="center">
-    <img alt="Inventory-vanilla" src="https://i.imgur.com/8XEPydI.jpeg" width="800" />
+    <img alt="Inventory-vanilla" src="https://i.imgur.com/8XEPydI.jpeg" width="800" style="margin-bottom: 10px;" />
     <img alt="Inventory-modded" src="https://i.imgur.com/1lh5YE7.jpeg" width="800" />
 </div>
 
 <h6 align="center" style="background: #d3d3d3; padding: 4px;">Water<h6>
 <div align="center">
-    <img alt="Water-vanilla" src="https://i.imgur.com/78lPdiN.png" width="800" />
+    <img alt="Water-vanilla" src="https://i.imgur.com/78lPdiN.png" width="800" style="margin-bottom: 10px;" />
     <img alt="Water-modded" src="https://i.imgur.com/33wdJrl.png" width="800" />
 </div>
 
@@ -104,12 +104,24 @@ Look at the mod that you want, let's say you want to merge the `flashlight` mod.
 Go to the [`BatteryBasedLight.cs`](https://github.com/Ishidawg/TheForest-Modding/blob/main/001_flashlight/003Intensity_Range_BatteryCost/BatteryBasedLight.cs) and copy the changes (battery cost, intensity and range). Then in `dnSpy`, open your `Assembly-CSharp.dll` → `TheForest.items.World` → `BatteryBasedLight`, now with the *mouse right button* click on `Edit Class (C#)...` and just do the changes you want, like this:
 
 <div align="center">
-    <img alt="Torch-vanilla" src="https://i.imgur.com/P8E3ZnP.png" width="900" />
+    <img alt="Torch-vanilla" src="https://i.imgur.com/P8E3ZnP.png" width="900" style="margin-bottom: 10px;" />
 </div>
 <div align="center">
     <img alt="Torch-vanilla" src="https://i.imgur.com/jEZbOpm.png" width="900" />
 </div>
 
 When you are done with editing, click on `File` → `Save All` and then `Ok`. That's it! You've made your **own mod** by merging what you want into your game.
+
+## Testing
+The **last (old) version** of all mod had **so many issues**, like the classic laser beam coming from the flashlight or the flashlight just does not working at all. You couldn't shoot your arrows! What an absurd! So I did the testing of each mod one by one. The conclusions are that this time is all working fine even in multiplayer, you and your friends can play with all of them having the mod or not, **will work fine**. There is no more laser beam, green screen after installing the mod or even the broken bow, **but please**, if you see **any bug**, *report and I will fix it*. here are some of the testing screenshots during testing.
+
+<div align="center">
+    <img alt="Torch-vanilla" src="https://i.imgur.com/deixxlS.jpeg" width="500" />
+    <img alt="Torch-vanilla" src="https://i.imgur.com/6h2lCzq.png" width="500" />
+    <img alt="Torch-vanilla" src="https://i.imgur.com/whNhvIj.jpeg" width="500" />
+    <img alt="Torch-vanilla" src="https://i.imgur.com/Z5iTzr2.png" width="500" />
+    <img alt="Torch-vanilla" src="https://i.imgur.com/ymx6Mxr.jpeg" width="500" />
+</div>
+
 ****
 Yeep, that's it, contribute to modding, write code and use tools. Be happy ❤️
