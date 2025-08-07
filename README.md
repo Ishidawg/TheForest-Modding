@@ -1,108 +1,113 @@
 # The Forest 💀🌴
 > *A collection of mods I've created for The Forest.*
 
-<p align="justify">Having recently returned to The Forest after all these years, I found certain aspects of the game to be rather bothersome, even though I understand they are intentional design choices by the developers. As a developer myself, I wanted to play the game as I envisioned it after completing it without mods. The particular aspects that bothered me were: Water Blur, Flashlight, and Lighter.</p>
+This is a new README. It contains more information about how everything works and is more straightforward. If you want to check out the old README, just click it.
 
-**About Water Blur:** <p align="justify">I understand that it's realistic for my vision to become almost blinded by particles and such when underwater, resulting in a blurry mess. Do I like it? No. Do I understand it? Yes. Therefore, I've removed the underwater blur to make the underwater environment clearer.</p>
+## Content
+- [Mods](mods)
+- [Installation](installation)
+- [Comparison](comparison)
+- [How to merge yourself](howtomergeyourself)
 
-**About Flashlight:** <p align="justify">In my initial playthrough (co-op), I hardly used the flashlight. Why? Because the game was too dark, necessitating the use of the built-in color grading feature to brighten things up. However, caves and nights were still too dark (which is realistic and I appreciate), but the flashlight barely emitted more light than the default lighter and drained battery incredibly quickly — approximately 10 minutes according to the wiki ("The flashlight emits a bright source of light when turned on, and it lasts for about 10 minutes."). Therefore, I've increased the radius and range of the flashlight's illumination, as well as extended its battery life to approximately 60 minutes.</p>
+## Mods
 
-**About Lighter:** <p align="justify">This one was a real pain in the ass to tweak. I struggled to figure out how to mod its values; it was quite confusing. After spending countless hours debugging and testing, I couldn't find a solution. So, if adjusting the range of the lighter is a common annoyance for you as well, any help with modding it would be greatly appreciated.</p>
+I've created four mods so far. They are intended to modify the behavior of the flashlight, torch, water, and inventory (without making the game easier). These are just small tweaks to maintain the vanilla difficulty. Below are the changes for each:
 
-**About Inventory:** <p align="justify">my hands can only hold so many rocks and sticks at once. But my backpack? That thing is already stuffed with meds, human bodies part, turtle shells, a bunch of melee weapons, and, somehow, a focking katana. So, yeah, it’s a video game. The Forest has a "survival" tag on Steam, but every time I play solo, I never bother with building a base. Instead, I just hoard sticks and leaves to craft a tent whenever I need to save. That’s why I find item limits unnecessary. Now, with this mod, the item cap is, meaning you can carry as much items as you want.</p>
+### Flashlight
+- Increased the **intensity** (*or brightness, if you prefer*) of the light by approximately `222%`. This was done by *multiplying* the original intensity (`0.45f`) by `2f`, resulting in `1.0f`, and then to `1.45f`.
+- Increased the **range** (*how far the light goes*) by around `20%`, by multiplying the final range by `1.2f`.
+- Doubled the **battery lifespan** by cutting the usage cost in *half* (from `0.1f`), resulting in *20 minutes of light*.
 
-****
+### Torch
+- Doubled the **intensity** (*or brightness*) of the light.
+- Doubled the **lifespan** of the fire by halving the fuel consumption.
 
-## Softwares 🛠️
-> *IDK if can I write down the link to all tools, cuz some are in archive repository...*
-- *Code Editor:* VS Code ([Download](https://code.visualstudio.com/))
-- *Language:* C# ([Learn more](https://learn.microsoft.com/en-us/dotnet/csharp/))
-- *Debugger and .NET assembly editor:* dnSpy
+### Inventory
+- **Hard-capped** the limit of all countable items to `1000`.
+- Tweaked the `BowController` to actually *see* that the inventory can **handle more** than 30 arrows.
 
-## How to install 📑
-you **DONT** need a modmanager, just download the mod that you want and put in:
+### Water
+- **Removed** the water blur post-effect.
 
-```diff
-+  The Forest\TheForest_Data\Managed\ **Assembly-CSharp.dll**
-```
+If you want all mods in *one package*, download the `Merged` version. Otherwise, choose the individual ones you want: `flashlight`, `torch`, `inventory`, or `water`.
 
-## IMPORTANT!
-I'll merge the mods to create a comprehensive version with all the changes. Also, if you know how to modify the range of the lighter's flame (its duration and the radius it illuminates), please contribute to it.
-****
+## Installation
 
-## How I made
-<p align="justify">As The Forest is a Unity game, you'll need to modify the file present in the Managed folder (all Unity games have one). Sometimes it's an Assembly-CSharp.dll; other times, for more complex games, it may be different. Once you've identified the file, you'll need a debugger and editor. I use dnSpy. Navigate through the files, for example, for the water blur, the file that contains all the functions and methods is UnderWaterPostEffect.cs.</p>
+### Windows:
+Go to your **game’s root folder**, then open the correct folder depending on the *version* you're playing.
+**For example:**
+- 64-bit (x64): `Steam\steamapps\common\The Forest\TheForest_Data\Managed`.
+- 32-bit (x86): `Steam\steamapps\common\The Forest\TheForest_Data\Managed`.
+- VR version: `C:\Program Files (x86)\Steam\steamapps\common\The Forest\TheForestVR_Data\Managed`.
 
-### Remove blur
-<p align="justify">To remove the blur, simply follow the comments I've added in the code. I removed the blur_object from the Start() function and all lines referring to blur in the OnRenderImage() function. You might wonder, "Why does the water still appear blurred after removing the blur?" Well, in fact, the blur doesn't affect the water much; it's the color filter applied over it that causes the clarity issue due to its whitish tint. I couldn't reduce the opacity of the water's tint, but it's better than it being blurrier, as you can see in the image below.</p>
+*Make a backup of the original DLL so that if you want to uninstall the mod, you can restore it easily.*
 
-**Default Underwater**
-![DefaultWater](https://github.com/Ishidawg/TheForest-Modding/blob/main/images/underwater-blur.png?raw=true)
+**Copy** the DLL that you have downloaded (`Assembly-CSharp.dll`) to the `Managed` folder and **replace-it**.
 
-**Modded Underwater**
-![ModdedWater](https://github.com/Ishidawg/TheForest-Modding/blob/main/images/underwater-clear.png?raw=true)
+Done! You folder should look like this:
 
-<p align="justify">So, I managed to get rid of the underwater blur, but that annoying white tint is still there. I tried toning it down, but removing it altogether made things look pretty awful tbh. It's not perfect, but it's definitely better than before IMO.</p>
+<div align="center">
+    <img alt="Windows Folder" src="https://i.imgur.com/DGdEPcH.png" width="800" />
+</div>
 
-### Better flashlight (IMO)
-<p align="justify">By the way, just like I did with the underwater post process, if you take a peek at the code, you'll notice comments to help you navigate through the modifications.</p>
-<p align="justify">So, I started by digging into the .cs file responsible for the flashlight functions and attributes, named "BatteryBasedLight". The game's code had me scratching my head a bit when it came to modding. I ended up removing all values from constructors at the bottom of the code:</p>
+### Linux
+Same process as Windows. The final path should look like: `/home/yourusername/.local/share/Steam/steamapps/common/The Forest/TheForest_Data/Managed/`
 
-![Code-contructor](https://github.com/Ishidawg/TheForest-Modding/blob/main/images/flashlight-constructors-values.png?raw=true)
+*Make a backup of the original DLL so that if you want to uninstall the mod, you can restore it easily.*
 
-<p align="justify">Then, go on Awake() function, that is the main function of lantern and set the values directly, I added this code:</p>
+**Copy** the DLL that you have downloaded (`Assembly-CSharp.dll`) to the `Managed` folder and **replace-it**.
 
-![Code-main-function](https://github.com/Ishidawg/TheForest-Modding/blob/main/images/awake-function.png?raw=true)
+Done! You folder should look like this:
 
-**Default Flashlight**
-![DefautFlashlight](https://github.com/Ishidawg/TheForest-Modding/blob/main/images/Flashlight-shitty-one.png?raw=true)
+<div align="center">
+    <img alt="Windows Folder" src="https://i.imgur.com/dT2WxF1.jpeg" width="800" />
+</div>
 
-**Modded Flashlight**
-![DefautFlashlight](https://github.com/Ishidawg/TheForest-Modding/blob/main/images/Flashlight-good-one.png?raw=true)
+<!-- ![Windows Folder](https://i.imgur.com/DGdEPcH.png) -->
+<!-- ![Linux Folder](https://i.imgur.com/dT2WxF1.jpeg) -->
 
-### Better torch (IMO)
-<p align="justify">By the way, just like I did with the underwater post process and flashlight, if you take a peek at the code, you'll notice comments to help you navigate through the modifications.</p>
-<p align="justify">So, I started by digging into the .cs file responsible for range of lighter, and again, no progress at all... So I decided to mod a intensity and duration of torch, that is identified on .cs file "Burnable Cloth", then, easy as flashligh modification, I ended up removing all values from constructors at the bottom of the code and assing the values directly on Awake() function, like this: </p>
+## Comparison
+If you're **unsure** about what *visually* has actually **changed**, take a look at the comparison section:
 
-![Code-main-function](https://github.com/Ishidawg/TheForest-Modding/blob/main/images/stick-code-awake.PNG?raw=true)
+<h6 align="center" style="background: #d3d3d3; padding: 4px;">Flashlight<h6>
+<div align="center">
+    <img alt="Flashlight-vanilla" src="https://i.imgur.com/8dF3Mu9.png" width="600" />
+    <img alt="Flashlight-modded" src="https://i.imgur.com/ius5Ohs.png" width="600" />
+</div>
 
-Before and after to comparisons... Later I'll do a merged versio with all mods together...
+<h6 align="center" style="background: #d3d3d3; padding: 4px;">Torch<h6>
+<div align="center">
+    <img alt="Torch-vanilla" src="https://i.imgur.com/dyam6L3.png" width="600" />
+    <img alt="Torch-modded" src="https://i.imgur.com/lzkn9ii.png" width="600" />
+</div>
 
-**Default Torch**
-![DefautFlashlight](https://github.com/Ishidawg/TheForest-Modding/blob/main/images/stick-shit.png?raw=true)
+<h6 align="center" style="background: #d3d3d3; padding: 4px;">Inventory<h6>
+<div align="center">
+    <img alt="Inventory-vanilla" src="https://i.imgur.com/8XEPydI.jpeg" width="600" />
+    <img alt="Inventory-modded" src="https://i.imgur.com/1lh5YE7.jpeg" width="600" />
+</div>
 
-**Modded Torch**
-![DefautFlashlight](https://github.com/Ishidawg/TheForest-Modding/blob/main/images/stick-good.png?raw=true)
+<h6 align="center" style="background: #d3d3d3; padding: 4px;">Water<h6>
+<div align="center">
+    <img alt="Water-vanilla" src="https://i.imgur.com/78lPdiN.png" width="600" />
+    <img alt="Water-modded" src="https://i.imgur.com/33wdJrl.png" width="600" />
+</div>
 
-### Remove Stash Limit
-<p align="justify">The inventory system in <strong>The Forest</strong> is managed within the <code>TheForest.Items.Inventory</code> namespace, specifically inside the <code>InventoryItem</code> class. That’s where I started digging:</p>
+## How to merge yourself
 
-![TheForestItemInventory](https://github.com/user-attachments/assets/914e5178-d286-4729-bbd6-b85dd632488b)
+To be honest, the only method I found to work is the *old-fashioned cowboy way*: **copy and paste**. I initially tried using the **Merge with Assembly** in dnSpy, but I can't get it to work. So my tip is *real simple*, just more *time demanding* (about 5 minutes): **Copy & Paste**.
 
-<p align="justify">First, I modified the <code>get</code> function for <code>maxAmount</code>, which is responsible for enforcing item stack limits.</p>
+You will need the [dnSpy]("https://github.com/dnSpyEx/dnSpy") to edit game assemblie. Just download it, then open the `Assembly-CSharp.dll`. Now is just copy and paste. 
 
-**Default**
-![getOfMaxAmount-1](https://github.com/user-attachments/assets/b94ddb25-5717-4d0b-9ade-878cff3b9e91)
+Look at the mod that you want, let's say you want to merge the `flashlight` mod.
 
-**Modded**
-![getOfMaxAmount-2](https://github.com/user-attachments/assets/8c1c2e2b-89e4-4044-a6aa-c2b3773224d4)
+Go to the [`BatteryBasedLight.cs`](https://github.com/Ishidawg/TheForest-Modding/blob/main/001_flashlight/003Intensity_Range_BatteryCost/BatteryBasedLight.cs) and copy the changes (battery cost, intensity and range). Then in `dnSpy`, open your `Assembly-CSharp.dll` → `TheForest.items.World` → `BatteryBasedLight`, now with the *mouse right button* click on `Edit Class (C#)...` and just do the changes you want, like this:
 
-<p align="justify">However, simply changing this getter wasn't enough. The game still had additional validations preventing the player from carrying an unlimited number of what he wants. So, I had to look into the function that gets called every time an item is picked up.</p>
+<div align="center">
+    <img alt="Torch-vanilla" src="https://i.imgur.com/P8E3ZnP.png" width="900" />
+</div>
+<div align="center">
+    <img alt="Torch-vanilla" src="https://i.imgur.com/jEZbOpm.png" width="900" />
+</div>
 
-**Default**
-![addFun-1](https://github.com/user-attachments/assets/75c0c261-5662-4419-96a6-b7274375213b)
-
-**Modded**
-![addFun-2](https://github.com/user-attachments/assets/2e6d1525-71fc-455e-b9d4-62c67787ba81)
-
-<p align="justify">By tweak this function, I removed the overflow verification, which originally checked whether the item stack had reached its maximum limit before allowing the player to pick up more. Now, the game no longer checks for item limits, meaning you can hold tight as many sticks want... enjoy!</p>
-
-**Inventory screenshots**
-![stickInventory](https://github.com/user-attachments/assets/1e72b6f5-91b0-441f-9dec-dcbf41aeea44)
-![snackInventory](https://github.com/user-attachments/assets/d9d91444-841e-4aac-bf94-23595d7dee66)
-
-****
-Yeep, that's it, contribute to modding, write code and use tools. Be happy ❤️
-
-
-
+When you are done with editing, click on `File` → `Save All` and then `Ok`. That's it! You've made your **own mod** by merging what you want into your game.
