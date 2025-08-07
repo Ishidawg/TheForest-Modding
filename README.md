@@ -37,9 +37,9 @@ If you want all mods in *one package*, download the `Merged` version. Otherwise,
 ### Windows:
 Go to your **game’s root folder**, then open the correct folder depending on the *version* you're playing.
 **For example:**
-- 64-bit (x64): `Steam\steamapps\common\The Forest\TheForest_Data\Managed`.
-- 32-bit (x86): `Steam\steamapps\common\The Forest\TheForest_Data\Managed`.
-- VR version: `C:\Program Files (x86)\Steam\steamapps\common\The Forest\TheForestVR_Data\Managed`.
+- 64-bit (x86_64): `Steam\steamapps\common\The Forest\TheForest_Data\Managed`.
+- 32-bit (x86): `Steam\steamapps\common\The Forest\TheForest_Data32\Managed`.
+- VR version: `Steam\steamapps\common\The Forest\TheForestVR_Data\Managed`.
 
 *Make a backup of the original DLL so that if you want to uninstall the mod, you can restore it easily.*
 
